@@ -1,0 +1,32 @@
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #invoice, #invoice * {
+    visibility: visible;
+  }
+  #invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .btn {
+    display: none;
+  }
+}
+
+input.form-control.border-0:focus {
+  box-shadow: none;
+  border-color: #dee2e6 !important;
+  background-color: #f8f9fa;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.table td {
+  vertical-align: middle;
+}
