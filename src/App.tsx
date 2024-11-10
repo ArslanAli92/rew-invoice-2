@@ -47,7 +47,7 @@ function App() {
   const calculateTotal = () => {
     const subtotal = calculateSubtotal();
     const gstAmount = (subtotal * gst) / 100;
-    return subtotal + gstAmount + adjustment;
+    return subtotal + gstAmount - adjustment;
   };
 
   const generatePDF = () => {
@@ -63,15 +63,15 @@ function App() {
   };
 
   return (
-    <div className="container my-5">
+    <div className="container px-5 my-5">
       <div id="invoice" className="bg-white p-4 shadow rounded">
-        <div className="row mb-4">
-          <div className="col-6">
-            <div className="d-flex align-items-center mb-3">
+          <div className="row mb-4">
+            <div className="col-6 mb-3">
               <Building2 size={32} className="me-2" />
               <h2 className="mb-0">Rashid Engineering Works</h2>
-            </div>
             <p className="text-muted">Excellence in Engineering</p>
+            </div>
+            <div className="col-6  mb-3 text-end">
             <p>
               Old Motor Market, Near Office 1122
               <br />
@@ -84,9 +84,11 @@ function App() {
               <br />
               CNIC No: 33102-7295483-7
             </p>
+            </div>
           </div>
-          <div className="col-6 text-end">
+        {/* <div className="row mb-4"> */}
             <h4>Invoice</h4>
+          <div className="col-6 text-end">
             <div className="mb-3">
               <label className="form-label">Invoice Number</label>
               <input
@@ -95,6 +97,8 @@ function App() {
                 value="INV-2024-001"
               />
             </div>
+            </div>
+            <div className='col-6 text-end'>
             <div className="mb-3">
               <label className="form-label">Date</label>
               <input
@@ -104,7 +108,7 @@ function App() {
               />
             </div>
           </div>
-        </div>
+        {/* </div>   */}
 
         <div className="row mb-4">
           <div className="col-12">
@@ -247,7 +251,8 @@ function App() {
                 <div className="d-flex justify-content-between align-items-center">
                   <span>GST (%):</span>
                   <input
-                    type="number"
+                    type="text"
+                    placeholder='GST'
                     className="form-control ms-2"
                     style={{ width: '80px' }}
                     value={gst}
@@ -259,7 +264,7 @@ function App() {
                 <div className="d-flex justify-content-between align-items-center">
                   <span>Adjustment:</span>
                   <input
-                    type="number"
+                    type="text"
                     className="form-control ms-2"
                     style={{ width: '120px' }}
                     value={adjustment}
