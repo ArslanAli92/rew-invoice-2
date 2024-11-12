@@ -63,16 +63,17 @@ function App() {
   };
 
   return (
-    <div className="container px-5 my-5">
-      <div id="invoice" className="bg-white p-4 shadow rounded">
+    <div className="container ">  
+    {/* this is taken from px-5 my-5 */}
+      <div id="invoice" className="bg-white p-4  shadow rounded">
           <div className="row mb-4">
-            <div className="col-6 mb-3">
+            <div className="col-sm-12 text-center">
               <Building2 size={32} className="me-2" />
               <h2 className="mb-0">Rashid Engineering Works</h2>
-            <p className="text-muted">Excellence in Engineering</p>
+              <p className="text-muted">Excellence in Engineering</p>
             </div>
-            <div className="col-6  mb-3 text-end">
-            <p>
+            <div className="  mb-3 text-center">
+            <p >
               Old Motor Market, Near Office 1122
               <br />
               Jhang Road Faisalabad
